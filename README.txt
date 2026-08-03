@@ -7,4 +7,5 @@ CONVITE NATALY & RODRIGO — GITHUB PAGES
 5. O endereço será:
    https://nsrodrigo.github.io/convite-nataly-rodrigo/
 
-Observação: o horário 07h30 de São Paulo foi convertido para 10h30 UTC no arquivo de calendário.
+Observação: o horário 07h30 de São Paulo foi convertido para 10h30 UTC no arquivo de calendário. 
+
