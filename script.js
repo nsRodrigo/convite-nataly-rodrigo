@@ -1,0 +1,8 @@
+document.querySelectorAll("[data-modal]").forEach(btn=>{btn.addEventListener("click",()=>{const m=document.getElementById(btn.dataset.modal);m.classList.add("open");m.setAttribute("aria-hidden","false")})});
+document.querySelectorAll(".close").forEach(btn=>btn.addEventListener("click",()=>{const m=btn.closest(".modal");m.classList.remove("open");m.setAttribute("aria-hidden","true")}));
+document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m){m.classList.remove("open");m.setAttribute("aria-hidden","true")}}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal.open").forEach(m=>m.classList.remove("open"))});
+document.getElementById("agenda").addEventListener("click",()=>{
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Nataly e Rodrigo//Legitimacao Matrimonial//PT-BR","BEGIN:VEVENT","UID:nataly-rodrigo-20260821@github.com","DTSTAMP:20260803T120000Z","DTSTART:20260821T103000Z","DTEND:20260821T120000Z","SUMMARY:Legitimação Matrimonial — Nataly & Rodrigo","LOCATION:Igreja Nossa Senhora da Gruta, Praça Oiapoque, 300, Alphaville Industrial, Barueri - SP","DESCRIPTION:Legitimação matrimonial durante a Santa Missa das 07h30.","END:VEVENT","END:VCALENDAR"].join("\\r\\n");
+  const blob=new Blob([ics],{type:"text/calendar;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="Nataly-e-Rodrigo-21-08-2026.ics";a.click();URL.revokeObjectURL(url);
+});
