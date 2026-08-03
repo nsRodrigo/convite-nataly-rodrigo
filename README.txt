@@ -1,7 +1,7 @@
 CONVITE NATALY & RODRIGO — GITHUB PAGES
 
 1. Crie um repositório público chamado: convite-nataly-rodrigo
-2. Envie index.html, style.css e script.js para a raiz do repositório.
+2. Envie index.html, style.css, script.js e a pasta assets/ (com as fotos da igreja e do casal) para a raiz do repositório.
 3. No GitHub: Settings > Pages > Deploy from a branch > main > /(root) > Save.
 4. Aguarde a publicação.
 5. O endereço será:

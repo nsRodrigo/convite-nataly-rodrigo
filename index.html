@@ -10,40 +10,79 @@
 :root{--bg:#f6efe4;--paper:#fffaf1;--ink:#563a27;--gold:#b9822c;--line:#d9b873}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfd0;color:var(--ink);font-family:Montserrat,sans-serif}
 .page{width:min(100%,480px);margin:auto;background:var(--bg);overflow:hidden;box-shadow:0 0 35px #0002}
-.hero{min-height:100svh;padding:32px 20px 42px;display:flex;flex-direction:column;justify-content:center;text-align:center;position:relative;background:radial-gradient(circle at 75% 8%,#fff9ed 0 14%,transparent 38%),linear-gradient(#f8f1e6,#f1e5d4)}
-.cross{font-family:Georgia;font-size:30px;color:var(--gold)}.eyebrow{font-size:9px;letter-spacing:2.7px;margin:16px 0;color:#8b642e}.opening{font:500 25px/1.15 "Cormorant Garamond",serif;margin:0 auto 18px;max-width:360px}.heart{color:var(--gold);font-size:24px}.names{font:500 56px/.85 "Cormorant Garamond",serif;font-style:italic;margin:12px 0;color:#5b321b}.subtitle{display:inline-block;background:#f2dcb0;padding:9px 14px;letter-spacing:3px;font-size:10px;font-weight:600;margin:8px auto 16px}.verse{font:italic 23px/1.15 "Cormorant Garamond",serif;margin:0}.ref{font:10px Montserrat;letter-spacing:2px;margin-top:7px}
-.section{padding:30px 18px;background:var(--paper);text-align:center}.intro{font:20px/1.35 "Cormorant Garamond",serif}.info{background:#fff7e8;border:1px solid #efd9aa;border-radius:24px;padding:18px 12px;margin-top:22px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.info h3{font:600 23px "Cormorant Garamond",serif;margin:4px}.label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#9a7137}.church{font:600 22px "Cormorant Garamond",serif;margin:15px 0 5px}.address{font-size:11px;line-height:1.55}.map{display:block;text-decoration:none;color:#fff;background:linear-gradient(90deg,#b2761e,#d0963c);border-radius:30px;padding:13px;margin:17px 20px 0;font-weight:600;font-size:11px;letter-spacing:1px}
-.message{padding:34px 18px;background:#f1e6d6;text-align:center}.message h2{font:500 34px "Cormorant Garamond",serif;margin:8px}.message p{font:20px/1.35 "Cormorant Garamond",serif;margin:8px}.message .strong{font-style:italic;font-weight:600;font-size:25px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.card{border:1px solid #e7c989;border-radius:17px;background:#fff9ee;padding:17px 8px;min-height:142px;color:var(--ink);cursor:pointer}.card .icon{font-size:27px}.card b{display:block;font:600 19px "Cormorant Garamond",serif;margin:6px 0}.card small{font-size:9px;line-height:1.35;color:#806b54}.agenda{border:0;background:#f1d79f;border-radius:30px;padding:14px;width:100%;margin-top:12px;color:var(--ink);font-weight:600;font-size:11px;letter-spacing:1px}
-.closing{padding:38px 18px 45px;text-align:center;background:#f8efe1}.closing blockquote{font:italic 25px/1.15 "Cormorant Garamond",serif;margin:0}.closing p{font:20px/1.3 "Cormorant Garamond",serif}.closing .cta{display:block;background:#bd8127;color:#fff;border-radius:30px;padding:14px;font-size:12px;font-weight:600;margin:18px 10px}.footer{font-size:10px;letter-spacing:1.5px}.modal{display:none;position:fixed;inset:0;background:#3d2a1ecc;z-index:10;padding:18px;align-items:center;justify-content:center}.modal.show{display:flex}.modalbox{width:min(440px,100%);max-height:85svh;overflow:auto;background:#fff8ed;border-radius:22px;padding:25px 20px;position:relative}.modalbox h2{font:500 30px "Cormorant Garamond",serif;margin:0 30px 15px 0}.modalbox p,.modalbox li{font:19px/1.35 "Cormorant Garamond",serif}.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:30px;color:#765333}.modalbox blockquote{font:italic 21px/1.2 "Cormorant Garamond",serif;border-bottom:1px solid #ead6b6;padding:12px 0}.modalbox cite{display:block;font:9px Montserrat;letter-spacing:1px;margin-top:6px}
+.hero{min-height:100svh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;cursor:pointer}
+.hero-bg{position:absolute;top:0;left:0;right:0;height:46%;background:url('assets/igreja.jpg') no-repeat center 22%/cover;opacity:.6;filter:sepia(.25) contrast(1.05);-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+.hero-bg2{position:absolute;left:0;right:0;bottom:0;height:44%;background:url('assets/casal.jpg') no-repeat center 32%/cover;opacity:.78;filter:grayscale(.25) sepia(.15) contrast(1.15) brightness(1.05);-webkit-mask-image:linear-gradient(to top,#000 78%,transparent 100%);mask-image:linear-gradient(to top,#000 78%,transparent 100%)}
+.hero-fade{position:absolute;inset:0;background:radial-gradient(circle at 75% 8%,#fff9ed 0 18%,transparent 40%),linear-gradient(180deg,rgba(248,241,230,.4) 0%,rgba(241,229,212,.5) 35%,rgba(241,229,212,.48) 70%,rgba(241,229,212,.55) 90%,rgba(241,229,212,1) 100%)}
+.hero-content{position:relative;z-index:2;width:100%;min-width:0;padding:30px 20px 20px;text-align:center;transform:translateY(-22px)}
+.verse-top{position:absolute;top:28px;left:0;right:0;z-index:2;text-align:center;padding:0 64px 0 24px}
+.cross{font-family:Georgia;font-size:30px;color:var(--gold)}
+.eyebrow{font-size:9px;letter-spacing:2.7px;margin:16px 0;color:#8b642e}
+.opening{font:500 25px/1.15 "Cormorant Garamond",serif;margin:0 auto 18px;max-width:360px}
+.heart{color:var(--gold);font-size:24px}
+.names{font:500 56px/.85 "Cormorant Garamond",serif;font-style:italic;margin:12px 0;color:#5b321b}
+.subtitle{display:inline-block;background:#f2dcb0;padding:9px 14px;letter-spacing:3px;font-size:10px;font-weight:600;margin:8px auto 16px}
+.verse{font:italic 23px/1.15 "Cormorant Garamond",serif;margin:0}
+.ref{font:10px Montserrat;letter-spacing:2px;margin-top:7px}
+.section{padding:30px 18px;background:var(--paper);text-align:center}.intro{font:20px/1.35 "Cormorant Garamond",serif}.info{background:#fff7e8;border:1px solid #efd9aa;border-radius:24px;padding:20px 10px 18px;margin-top:22px}
+.grid3{display:grid;grid-template-columns:1fr 1px 1fr 1px 1.2fr;align-items:start}
+.gdiv{background:var(--line);opacity:.55;width:1px;justify-self:center}
+.gcol{padding:0 4px}.gicon{font-size:17px;margin-bottom:5px}.gcol h3{font:600 15px "Cormorant Garamond",serif;margin:3px 0}
+.label{font-size:8px;letter-spacing:1px;text-transform:uppercase;color:#9a7137}.church{font:600 13px "Cormorant Garamond",serif;margin:3px 0 2px}.address{font-size:7.6px;line-height:1.35}
+.map{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:#fff;background:linear-gradient(90deg,#b2761e,#d0963c);border-radius:30px;padding:13px;margin:18px 10px 0;font-weight:600;font-size:11px;letter-spacing:1px}
+.chev{font-size:13px;opacity:.85}
+.message{padding:34px 18px;background:#f1e6d6;text-align:center;position:relative;overflow:hidden}.message h2{font:500 34px "Cormorant Garamond",serif;margin:8px;position:relative;z-index:1}.message p{font:20px/1.35 "Cormorant Garamond",serif;margin:8px;position:relative;z-index:1}.message .strong{font-style:italic;font-weight:600;font-size:25px;position:relative;z-index:1}
+.leaf{position:absolute;width:56px;height:150px;opacity:.5;pointer-events:none;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 220'><g fill='none' stroke='%23b9822c' stroke-width='2'><path d='M50 210 C48 160 52 110 50 10'/><ellipse cx='36' cy='55' rx='14' ry='7' transform='rotate(-30 36 55)' fill='%23c79a4e'/><ellipse cx='64' cy='85' rx='14' ry='7' transform='rotate(30 64 85)' fill='%23c79a4e'/><ellipse cx='34' cy='118' rx='15' ry='7.5' transform='rotate(-25 34 118)' fill='%23b9822c'/><ellipse cx='66' cy='150' rx='15' ry='7.5' transform='rotate(25 66 150)' fill='%23b9822c'/><ellipse cx='38' cy='182' rx='13' ry='6.5' transform='rotate(-20 38 182)' fill='%23c79a4e'/></g></svg>") no-repeat center/contain}
+.leaf.tl{top:6px;left:0}.leaf.tr{top:6px;right:0;transform:scaleX(-1)}.leaf.bl{bottom:0;left:0}.leaf.br{bottom:0;right:0;transform:scaleX(-1)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.card{display:block;border:1px solid #e7c989;border-radius:16px;background:#fff9ee;padding:16px 10px;min-height:128px;color:var(--ink);cursor:pointer;text-decoration:none}.card .icon{font-size:30px}.card b{display:flex;align-items:center;justify-content:center;gap:3px;font:600 16px "Cormorant Garamond",serif;margin:7px 0 3px}.card small{display:block;font-size:9px;line-height:1.3;color:#806b54}
+.agenda{border:0;background:#f1d79f;border-radius:30px;padding:14px;width:100%;margin-top:12px;color:var(--ink);font-weight:600;font-size:11px;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.closing{padding:38px 18px 45px;text-align:center;background:#f8efe1;position:relative;overflow:hidden}.closing blockquote{font:italic 25px/1.15 "Cormorant Garamond",serif;margin:0;position:relative;z-index:1}.closing p{font:20px/1.3 "Cormorant Garamond",serif;position:relative;z-index:1}.closing .cta{display:block;background:#bd8127;color:#fff;border-radius:30px;padding:14px;font-size:12px;font-weight:600;margin:18px 10px;position:relative;z-index:1}.footer{font-size:10px;letter-spacing:1.5px;position:relative;z-index:1}.rings{font-size:30px;color:var(--gold);margin-top:12px;position:relative;z-index:1}
+.modal{display:none;position:fixed;inset:0;background:#3d2a1ecc;z-index:10;padding:18px;align-items:center;justify-content:center}.modal.show{display:flex}.modalbox{width:min(440px,100%);max-height:85svh;overflow:auto;background:#fff8ed;border-radius:22px;padding:25px 20px;position:relative}.modalbox h2{font:500 30px "Cormorant Garamond",serif;margin:0 30px 15px 0}.modalbox p,.modalbox li{font:19px/1.35 "Cormorant Garamond",serif}.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:30px;color:#765333}.modalbox blockquote{font:italic 21px/1.2 "Cormorant Garamond",serif;border-bottom:1px solid #ead6b6;padding:12px 0}.modalbox cite{display:block;font:9px Montserrat;letter-spacing:1px;margin-top:6px}
+.listen-btn{position:fixed;top:14px;right:14px;z-index:30;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;background:linear-gradient(135deg,#b2761e,#d0963c);color:#fff;border:none;border-radius:50%;font-size:19px;box-shadow:0 6px 16px #4a2f0a55;cursor:pointer}
+.listen-btn:not(.speaking){animation:listenPulse 2.4s infinite}
+.listen-btn.speaking{background:linear-gradient(90deg,#8b5a1a,#a9701c)}
+@keyframes listenPulse{0%{box-shadow:0 8px 22px #4a2f0a55,0 0 0 0 #d0963c66}70%{box-shadow:0 8px 22px #4a2f0a55,0 0 0 14px #d0963c00}100%{box-shadow:0 8px 22px #4a2f0a55,0 0 0 0 #d0963c00}}
+#conviteConteudo{display:none}
+#conviteConteudo.show{display:block;animation:fadeUp .7s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 <div class="page">
-<section class="hero">
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-bg2"></div>
+<div class="hero-fade"></div>
+<div class="verse-top">
+<p class="verse">“O que Deus uniu, o homem não separe.”</p><div class="ref">MATEUS 19,6</div>
+</div>
+<div class="hero-content">
 <div class="cross">✝</div>
 <div class="eyebrow">UMA NOVA ETAPA, SOB A GRAÇA DE DEUS.</div>
 <p class="opening">Um amor que escolhemos viver.<br>Uma aliança que escolhemos entregar a Deus.</p>
 <div class="heart">♡</div>
 <h1 class="names">Nataly &amp; Rodrigo</h1>
 <div class="subtitle">LEGITIMAÇÃO MATRIMONIAL</div>
-<p class="verse">“O que Deus uniu, o homem não separe.”</p><div class="ref">MATEUS 19,6</div>
+</div>
 </section>
 
+<div id="conviteConteudo">
 <section class="section">
 <p class="intro">Com alegria e gratidão a Deus, queremos compartilhar com você um momento muito especial da nossa caminhada.</p>
 <div class="info">
-<div class="grid">
-<div><div class="label">Data</div><h3>21 de agosto<br>de 2026</h3></div>
-<div><div class="label">Horário</div><h3>07h30</h3><div class="label">Durante a Santa Missa</div></div>
+<div class="grid3">
+<div class="gcol"><div class="gicon">📅</div><div class="label">Data</div><h3>21 de agosto<br>de 2026</h3></div>
+<div class="gdiv"></div>
+<div class="gcol"><div class="gicon">🕐</div><h3>07h30</h3><div class="label">Durante a<br>Santa Missa</div></div>
+<div class="gdiv"></div>
+<div class="gcol"><div class="gicon">⛪</div><div class="church">Igreja Nossa<br>Senhora da Gruta</div><div class="address">Praça Oiapoque, 300<br>Alphaville Industrial<br>Barueri — SP</div></div>
 </div>
-<div class="church">Igreja Nossa Senhora da Gruta</div>
-<div class="address">Praça Oiapoque, 300 — Alphaville Industrial<br>Barueri — SP, 06454-060</div>
-<a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Igreja%20Nossa%20Senhora%20da%20Gruta%2C%20Pra%C3%A7a%20Oiapoque%2C%20300%2C%20Alphaville%20Industrial%2C%20Barueri%20-%20SP">⌖ &nbsp; COMO CHEGAR</a>
+<a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Igreja%20Nossa%20Senhora%20da%20Gruta%2C%20Pra%C3%A7a%20Oiapoque%2C%20300%2C%20Alphaville%20Industrial%2C%20Barueri%20-%20SP">📍 &nbsp;COMO CHEGAR<span class="chev">›</span></a>
 </div>
 </section>
 
 <section class="message">
+<div class="leaf tl"></div><div class="leaf tr"></div>
 <div class="cross">🕊️</div><h2>Um momento de fé</h2>
 <p>Nossa caminhada nos trouxe até aqui. E agora, diante de Deus, queremos viver este momento de maneira ainda mais especial, colocando nossa união, nosso amor e nossa família sob Sua proteção.</p>
 <p class="strong">Por isso, queremos você conosco.</p>
@@ -51,31 +90,74 @@
 
 <section class="section">
 <div class="cards">
-<button class="card" data-open="praticas"><span class="icon">🙏</span><b>Boas práticas</b><small>Alguns cuidados para vivermos a Santa Missa juntos.</small></button>
-<button class="card" data-open="palavra"><span class="icon">📖</span><b>Palavra de Deus</b><small>Versículos que representam este momento.</small></button>
-<button class="card" data-open="celebracao"><span class="icon">🕊️</span><b>Nossa celebração</b><small>Entenda um pouco mais sobre a legitimação matrimonial.</small></button>
-<button class="card" id="agenda"><span class="icon">📅</span><b>Adicionar à agenda</b><small>Guardar a data no seu calendário.</small></button>
+<a class="card" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Igreja%20Nossa%20Senhora%20da%20Gruta%2C%20Pra%C3%A7a%20Oiapoque%2C%20300%2C%20Alphaville%20Industrial%2C%20Barueri%20-%20SP"><span class="icon">📍</span><b>Como chegar<span class="chev">›</span></b><small>Abra o mapa e veja como chegar.</small></a>
+<button class="card" data-open="praticas"><span class="icon">🙏</span><b>Boas práticas<span class="chev">›</span></b><small>Alguns cuidados para vivermos a Santa Missa juntos.</small></button>
+<button class="card" data-open="palavra"><span class="icon">📖</span><b>Palavra de Deus<span class="chev">›</span></b><small>Versículos que representam este momento.</small></button>
+<button class="card" data-open="celebracao"><span class="icon">🕊️</span><b>Nossa celebração<span class="chev">›</span></b><small>Entenda um pouco mais sobre a legitimação matrimonial.</small></button>
 </div>
+<button class="agenda" id="agenda">📅 &nbsp;Adicionar à agenda<span class="chev">›</span></button>
 </section>
 
 <section class="closing">
+<div class="leaf bl"></div><div class="leaf br"></div>
 <blockquote>“Eu e minha casa serviremos ao Senhor.”</blockquote><div class="ref">JOSUÉ 24,15</div>
 <p>Que Deus seja sempre o centro da nossa família, do nosso amor e da nossa caminhada.</p>
 <div class="cta">♡ &nbsp; Será uma alegria ter você conosco!</div>
 <div class="footer">NATALY &amp; RODRIGO &nbsp;|&nbsp; 21 • 08 • 2026 &nbsp;|&nbsp; 07H30</div>
-<div class="cross" style="margin-top:22px">✝</div>
+<div class="rings">⚭</div>
+<div class="cross" style="margin-top:10px;position:relative;z-index:1">✝</div>
 </section>
+</div>
 </div>
 
 <div class="modal" id="praticas"><div class="modalbox"><button class="close">×</button><h2>🙏 Um pequeno pedido</h2><ul><li><b>Celular no silencioso:</b> durante a Santa Missa, pedimos que os celulares permaneçam no silencioso.</li><li><b>Registros com discrição:</b> se desejar fotografar, faça isso sem circular pela igreja ou interferir na celebração.</li><li><b>Traje adequado:</b> sugerimos roupas discretas e apropriadas para a celebração.</li><li><b>Silêncio e reverência:</b> procure evitar conversas e movimentações desnecessárias durante a Missa.</li><li><b>Participe conosco:</b> queremos que você viva conosco este momento de oração e fé.</li></ul></div></div>
 <div class="modal" id="palavra"><div class="modalbox"><button class="close">×</button><h2>📖 Palavra de Deus</h2><blockquote>“O que Deus uniu, o homem não separe.”<cite>Mateus 19,6</cite></blockquote><blockquote>“Acima de tudo, porém, revesti-vos do amor, que é o vínculo da perfeição.”<cite>Colossenses 3,14</cite></blockquote><blockquote>“Tudo o que fizerem, façam com amor.”<cite>1 Coríntios 16,14</cite></blockquote></div></div>
 <div class="modal" id="celebracao"><div class="modalbox"><button class="close">×</button><h2>🕊️ Nossa celebração</h2><p>No dia <b>21 de agosto</b>, durante a Santa Missa das <b>07h30</b>, viveremos um momento muito especial: nossa <b>legitimação matrimonial diante de Deus e da comunidade</b>.</p><p>Será uma celebração de fé, amor e compromisso, colocando nossa união e nossa família nas mãos de Deus.</p><p><b>Será uma alegria ter você conosco.</b></p></div></div>
+
+<button id="listenBtn" class="listen-btn" aria-label="Ouvir o convite em voz alta" title="Ouvir o convite">🔊</button>
+
 <script>
+document.getElementById('hero').onclick=()=>{
+const conteudo=document.getElementById('conviteConteudo');
+conteudo.classList.add('show');
+document.getElementById('hero').style.cursor='default';
+conteudo.scrollIntoView({behavior:'smooth',block:'start'});
+};
 document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.open).classList.add('show'));
 document.querySelectorAll('.modal').forEach(m=>{m.onclick=e=>{if(e.target===m)m.classList.remove('show')};m.querySelector('.close').onclick=()=>m.classList.remove('show')});
 document.getElementById('agenda').onclick=()=>{
 const ics=`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Nataly e Rodrigo//Legitimacao Matrimonial//PT-BR\r\nBEGIN:VEVENT\r\nUID:nataly-rodrigo-20260821@github.com\r\nDTSTAMP:20260803T120000Z\r\nDTSTART:20260821T103000Z\r\nDTEND:20260821T120000Z\r\nSUMMARY:Legitimação Matrimonial — Nataly & Rodrigo\r\nLOCATION:Igreja Nossa Senhora da Gruta, Praça Oiapoque, 300, Alphaville Industrial, Barueri - SP\r\nDESCRIPTION:Legitimação matrimonial durante a Santa Missa das 07h30.\r\nEND:VEVENT\r\nEND:VCALENDAR`;
 const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='Nataly-Rodrigo-21-08-2026.ics';a.click();
 };
+
+(function(){
+const btn=document.getElementById('listenBtn');
+if(!('speechSynthesis' in window)){btn.style.display='none';return;}
+const texto="Olá! Este é um convite especial de Nataly e Rodrigo. Com alegria e gratidão a Deus, eles querem compartilhar com você um momento muito especial da caminhada deles: a legitimação matrimonial. Isso vai acontecer no dia vinte e um de agosto de dois mil e vinte e seis, às sete horas e trinta da manhã, durante a Santa Missa, na Igreja Nossa Senhora da Gruta, na Praça Oiapoque, número trezentos, no Alphaville Industrial, em Barueri, São Paulo. Será uma alegria enorme ter você presente nesse momento de fé, amor e celebração. Eles contam com a sua presença!";
+function escolherVoz(){
+const vozes=speechSynthesis.getVoices();
+return vozes.find(v=>v.lang==='pt-BR')||vozes.find(v=>v.lang&&v.lang.startsWith('pt'))||null;
+}
+function parar(){
+speechSynthesis.cancel();
+btn.classList.remove('speaking');
+btn.innerHTML='🔊';
+btn.title='Ouvir o convite';
+}
+function falar(){
+speechSynthesis.cancel();
+const fala=new SpeechSynthesisUtterance(texto);
+fala.lang='pt-BR';
+fala.rate=0.95;
+const voz=escolherVoz();if(voz)fala.voice=voz;
+fala.onend=parar;fala.onerror=parar;
+speechSynthesis.speak(fala);
+btn.classList.add('speaking');
+btn.innerHTML='⏸️';
+btn.title='Parar leitura';
+}
+btn.onclick=()=>{speechSynthesis.speaking?parar():falar()};
+window.addEventListener('beforeunload',()=>speechSynthesis.cancel());
+})();
 </script>
 </body></html>
