@@ -666,7 +666,7 @@
         (function () {
             const btn = document.getElementById('listenBtn');
             if (!('speechSynthesis' in window)) { btn.style.display = 'none'; return; }
-            const texto = "Olá! Este é um convite especial de Natalí e Rodrigo. Com alegria e gratidão a Deus, eles querem compartilhar com você um momento muito especial da caminhada deles: a legitimação matrimonial. Isso vai acontecer no dia vinte e um de agosto de dois mil e vinte e seis, às sete horas e trinta da manhã, durante a Santa Missa, na Igreja Nossa Senhora da Gruta, na Praça Oiapoque, número trezentos, no Alphaville Industrial, em Barueri, São Paulo. Após a cerimônia, não Haverá recepção. Será uma alegria enorme ter você presente nesse momento de fé, amor e celebração. Eles contam com a sua presença!";
+            const texto = "Olá! Este é um convite especial de Natalí e Rodrigo. Com alegria e gratidão a Deus, eles querem compartilhar com você um momento muito especial da caminhada deles: a legitimação matrimonial. Que irá acontecer no dia vinte e um de agosto de dois mil e vinte e seis. às sete horas e trinta da manhã, durante a Santa Missa. na Igreja Nossa Senhora da Gruta, na Praça Oiapoque, número trezentos, no Alphaville Industrial, em Barueri, São Paulo. Após a cerimônia, não Haverá recepção. Será uma alegria enorme ter você presente nesse momento de fé, amor e celebração. Eles contam com a sua presença!";
             function escolherVoz() {
                 const vozes = speechSynthesis.getVoices();
                 return vozes.find(v => v.lang === 'pt-BR') || vozes.find(v => v.lang && v.lang.startsWith('pt')) || null;
